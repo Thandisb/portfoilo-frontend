@@ -19,3 +19,8 @@ Welcome to the restaurant App! an Application the allows user to view thew hotte
 
 ---
 
+### Deployment
+
+-Front-end: https://clever-dragon-693e5b.netlify.app/restaurants
+
+-Back-end: https://nyc-restaurant-api-zsv4.onrender.com/restaurants
