@@ -4,7 +4,7 @@ const AxiosInstance = axios.create({
   baseURL:
     process.env.NODE_ENV === 'Production'
       ? process.env.REACT_APP_API_URL
-      : 'DEPLOY URL',
+      : 'https://nyc-restaurant-api-zsv4.onrender.com/restaurants',
   timeout: 50000,
 });
 
