@@ -1,0 +1,35 @@
+.nav-container {
+    background-color: sienna;
+    height: 100%;
+    color: white;
+    padding: 5px 5px;
+  }
+  
+  .nav-container p {
+    font-size: 25px;
+    font-style: bold;
+    display: inline;
+    color: white;
+  }
+  
+  .nav-container ul {
+    display: inline-flex;
+    list-style-type: none;
+  
+    margin: 0;
+    padding: 0;
+    color: white;
+  }
+  
+  .nav-container ul li {
+    display: inline;
+    float: left;
+  }
+
+  .nav-link{
+    text-decoration: none;
+    color: white;
+    display: block;
+    margin-left: 10px;
+    padding: 8px 10px;
+  }
