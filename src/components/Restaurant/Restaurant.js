@@ -7,7 +7,7 @@ import './Restaurant.css'
 function Restaurant({restaurant}) {
   return (
     <div>
-      <h2> {restaurant.borough}</h2>
+      <h2 className='restaurantborough'> {restaurant.borough}</h2>
        <Card style={{width: '18rem'}}>
         <Card.Body>
           <Card.Title>{restaurant.name}</Card.Title>

@@ -36,6 +36,7 @@ function ReviewForm(props) {
     event.preventDefault();
 
     props.fromParentReviewsHandleSubmit(review);
+    
     if(editReview){
       props.toggleEditForm()
     }
