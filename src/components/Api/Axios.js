@@ -3,8 +3,8 @@ import axios from 'axios';
 const AxiosInstance = axios.create({
   baseURL:
     process.env.NODE_ENV === 'Production'
-      ? process.env.REACT_APP_API_URL
-      : 'https://nyc-restaurant-api-zsv4.onrender.com/restaurants',
+      ? 'https://nyc-restaurant-api-zsv4.onrender.com/restaurants'
+      : process.env.REACT_APP_API_URL,
   timeout: 50000,
 });
 
