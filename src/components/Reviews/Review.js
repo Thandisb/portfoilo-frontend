@@ -5,6 +5,8 @@ import { FaRegUser, FaTrashAlt } from 'react-icons/fa';
 import ReviewForm from './ReviewForm'
 import Rating from '../Rating'
 
+import './Review.css'
+
 function Review() {
   
     const {

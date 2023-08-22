@@ -78,7 +78,7 @@ function ReviewForm(props) {
       <label htmlFor='content'>Review:</label>
       <textarea required type='text' id='content' placeholder='Tell Us Your Experience' value={review.content} onChange={handleTextChange}/>
       </div>
-      <button>Submit</button>
+      <button className='submit'>Submit</button>
       
     </form>
     </div>

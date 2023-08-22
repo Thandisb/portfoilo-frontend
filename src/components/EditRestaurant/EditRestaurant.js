@@ -45,12 +45,12 @@ function EditRestaurant() {
     }
   }
 
-  const handleTextChange = (e) => {
-       setRestaurant({
-        ...restaurant,
-        [e.target.id]: e.target.value
-       })
-  }
+  // const handleTextChange = (e) => {
+  //      setRestaurant({
+  //       ...restaurant,
+  //       [e.target.name]: e.target.value
+  //      })
+  // }
 
    
  
@@ -61,7 +61,7 @@ function EditRestaurant() {
             <form onSubmit={handleOnSubmit}>
                 <div className='restaurant-edit-form'> 
                     <label>Select a Borough</label>
-                    <select id='borough' onChange={handleTextChange}>
+                    <select id='borough' onChange={(e) => setRestaurant({...restaurant, borough: e.target.value})}>
                          <option>{restaurant.borough}</option>
                          <option value="Brooklyn">Brooklyn</option>
                          <option value="Bronx">Bronx</option>
@@ -73,46 +73,46 @@ function EditRestaurant() {
                    <label>Restaurant's Name:</label>
                    <input type='text'
                    value={restaurant.name}
-                   onChange={handleTextChange} />
+                   onChange={(e) => setRestaurant({...restaurant, name: e.target.value})} />
                 </div>
                 <div className='restaurant-edit-input'>
                   <label>Restaurant Address:</label>
                   <input type='text'
                   value={restaurant.location}
-                  onChange={handleTextChange}/>
+                  onChange={(e) => setRestaurant({...restaurant, location: e.target.value})}/>
                 </div>
                 <div className='restaurant-edit-input'>
                   <label>Restaurant's Website:</label>
                   <input type='text'
                   value={restaurant.url}
-                  onChange={handleTextChange}/>
+                  onChange={(e) => setRestaurant({...restaurant, url: e.target.value})}/>
                 </div>
                 <div className='restaurant-edit-input'>
                   <label>Description:</label>
                   <input type='text'
                   value={restaurant.description}
-                  onChange={handleTextChange}/>
+                  onChange={(e) => setRestaurant({...restaurant, name: e.target.value})}/>
                 </div>
                 <div className='restaurant-edit-input'>
                   <label>Health Rating:</label>
                   <input type='text'
                   value={restaurant.health_rating}
-                  onChange={handleTextChange}/>
+                  onChange={(e) => setRestaurant({...restaurant, health_rating: e.target.value})}/>
                 </div>
                 <div className='restaurant-edit-input'>
                   <label> Restaurant Hours:</label>
                   <input type='text'
                   value={restaurant.hours}
-                  onChange={handleTextChange}/>
+                  onChange={(e) => setRestaurant({...restaurant, hours: e.target.value})}/>
                 </div>
                 <div className='restaurant-edit-input'>
                   <label>Restaurant Price:</label>
                   <input type='number'
                   value={restaurant.price}
-                  onChange={handleTextChange}/>
+                  onChange={(e) => setRestaurant({...restaurant, price: e.target.value})}/>
                 </div>
 
-                <button>Update Restaurant</button>
+                <button type='submit'>Update Restaurant</button>
 
             </form>
         </div>

@@ -30,7 +30,7 @@ async function getAllRestaurants (){
  }
  async function updateOneRestaurant (id, updateRestaurant) {
     try {
-        let result = await Axios.get(`/restaurants/${id}`, updateRestaurant);
+        let result = await Axios.put(`/restaurants/${id}`, updateRestaurant);
         return result
     } catch (error) {
         return error
