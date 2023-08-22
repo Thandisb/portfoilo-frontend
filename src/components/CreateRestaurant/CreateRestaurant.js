@@ -1,10 +1,8 @@
 import React, {useState} from 'react'
-import {useNavigate} from 'react-router-dom'
 import {createRestaurantApi} from '../Api/Api'
 
 function CreateRestaurant() {
   
-  const navigate = useNavigate();
   const [data, setData] = useState({
     borough: "",
     name: "",

@@ -86,7 +86,7 @@ function handlesEdit(id){
         <Card.Subtitle className='mb-2 text-muted'>Address:{restaurantInfo?.location} <span>Website:{restaurantInfo?.url}</span></Card.Subtitle>
         <Card.Text>{restaurantInfo?.description}</Card.Text>
         <Card.Text as="div">
-          <Link to={`/restaurants/${id}/reviews/new`}>
+          <Link to={`/restaurants/${id}/reviews`}>
             <Rating value={reviewAverage} text={`${reviewCount} reviews`} />
           </Link>
         </Card.Text>

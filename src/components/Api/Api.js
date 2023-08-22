@@ -56,7 +56,7 @@ async function getAllRestaurants (){
     }
  }
 
- async function updaterecipeReviewByApi(id, updateReviewId, updatedReview){
+ async function updateRestaurantReviewByApi(id, updateReviewId, updatedReview){
     try {
       let result = await Axios.put(
         `/restaurants/${id}/reviews/${updateReviewId}`,
@@ -70,7 +70,7 @@ async function getAllRestaurants (){
  
  async function createReviewApi(id, newReview){
     try {
-        let result = await Axios.delete(`/restaurants/${id}/reviews`, newReview)
+        let result = await Axios.post(`/restaurants/${id}/reviews`, newReview)
         return result
     } catch (error) {
         return error
@@ -95,6 +95,6 @@ export {
          createRestaurantApi,
          getRestaurantReviews,
          createReviewApi,
-         updaterecipeReviewByApi,
+         updateRestaurantReviewByApi,
         deleteReviewApi
        }

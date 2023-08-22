@@ -10,7 +10,6 @@ import './Review.css'
 function Review() {
   
     const {
-        id,
         review, 
         fromParentReviewsHandleSubmit,
         handlesDelete,
@@ -35,27 +34,27 @@ function Review() {
                    style={{ width: '40px', height: '40px', marginRight: '10px' }}
                 />
                 
-                <Card.Title className='text-secondary'>{review?.reviewer}</Card.Title>
+                <Card.Title className='text-secondary'>{review.reviewer}</Card.Title>
 
                 </div>
                 <div className="mb-3">
-                <Rating value={review?.food_rating} text={`Food rating: ${review?.food_rating} stars`} />
+                <Rating value={review.food_rating} text={`Food rating: ${review.food_rating} stars`} />
                 </div>
                 <div className="mb-3">
-                <Rating value={review?.service_rating} text={`Service rating: ${review?.service_rating} stars`} />
+                <Rating value={review?.service_rating} text={`Service rating: ${review.service_rating} stars`} />
                 </div>
-                <Card.Title className='text-secondary'>{review?.title} </Card.Title>
-                <Card.Text>{review?.content}</Card.Text>
-                <button onClick={() => handlesDelete(id)}>
+                <Card.Title className='text-secondary'>{review.title} </Card.Title>
+                <Card.Text>{review.content}</Card.Text>
+                <button onClick={() => handlesDelete(review.id)}>
                     <FaTrashAlt  style={{ width: '20px', height: '20px', marginLeft: '10px' }} />
                 </button>
                 <Card.Footer>
-                    <div> Would You Recommend? {review?.would_recommend ? "⭐️" : "🚮" } </div>
+                    <div> Would You Recommend? {review.would_recommend ? "⭐️" : "🚮" } </div>
                     </Card.Footer>
             </Card.Body>
           )}
-            <button onClick={toggleEditForm}> Edit </button>
-            {/* <ReviewForm fromParentReviewHandleOnSubmit={fromParentReviewHandleOnSubmit} editReview={review} toggleEditForm = {toggleEditForm} /> */}
+            <button onClick={toggleEditForm}> Edit Review </button>
+            
        </Card>
     </Container>
   )

@@ -4,10 +4,10 @@ import Review from './Review'
 import ReviewForm from './ReviewForm'
 import { ReviewContext } from '../context/context'
 
-import {getRestaurantReviews, createReviewApi, updaterecipeReviewByApi, deleteReviewApi} from '../Api/Api'
+import {getRestaurantReviews, createReviewApi, updateRestaurantReviewByApi, deleteReviewApi} from '../Api/Api'
 
 
-const API = process.env.REACT_APP_API_URL;
+
 
 
 function Reviews() {
@@ -15,7 +15,7 @@ function Reviews() {
   const [toggleForm, setToggleForm] = useState(false)
 
   const { id } = useParams()
-  
+  const API = process.env.REACT_APP_API_URL;
 
   useEffect(() => {
    fetchRestaurantReviews()
@@ -43,13 +43,13 @@ function Reviews() {
  async function handlesEdit (updatedReview){
   console.log("handle edit", updatedReview)  
   try {
-      const result = await updaterecipeReviewByApi(
+      const result = await updateRestaurantReviewByApi(
         id,
         updatedReview.id,
         updatedReview
       );
-       
-      const copyReviewArray = [...reviews]
+       console.log(result)
+      const copyReviewArray = [...reviews];
 
       const indexUpdateReview = copyReviewArray.findIndex((review) => {
           return review.id === updatedReview.id;
@@ -82,7 +82,6 @@ async function handlesDelete (id){
        <ReviewContext.Provider
        
         value={{
-            id: id,
             fromParentReviewsHandleSubmit : handlesEdit,
             review: item,
             handlesDelete: handlesDelete,
