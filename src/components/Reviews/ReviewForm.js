@@ -38,7 +38,7 @@ function ReviewForm(props) {
     props.fromParentReviewsHandleSubmit(review);
     
     if(editReview){
-      props.toggleEditForm()
+      props.toggleEditForm();
     }
     setReview({
       reviewer:"",
@@ -47,7 +47,7 @@ function ReviewForm(props) {
       would_recommend:false,
       food_rating:0,
       service_rating:0,
-      restaurant_id: id,
+      restaurant_id: id
     })
   }
 

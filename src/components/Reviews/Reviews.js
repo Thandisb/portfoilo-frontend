@@ -6,7 +6,7 @@ import { ReviewContext } from '../context/context'
 
 import {getRestaurantReviews, createReviewApi, updateRestaurantReviewByApi, deleteReviewApi} from '../Api/Api'
 
-
+const API = process.env.REACT_APP_API_URL;
 
 
 
@@ -15,10 +15,10 @@ function Reviews() {
   const [toggleForm, setToggleForm] = useState(false)
 
   const { id } = useParams()
-  const API = process.env.REACT_APP_API_URL;
+  // const API = process.env.REACT_APP_API_URL;
 
   useEffect(() => {
-   fetchRestaurantReviews()
+   fetchRestaurantReviews();
   }, [id, API])
 
   async function fetchRestaurantReviews(){
@@ -34,7 +34,8 @@ function Reviews() {
   async function handleAdd(newReview) {
     try {
         let result = await createReviewApi(id, newReview)
-        setReviews(result.data, ...reviews)
+       console.log(result)
+        setReviews([result.data, ...reviews])
     } catch (e) {
         console.log(e)
     }
@@ -56,7 +57,9 @@ function Reviews() {
       });
 
       copyReviewArray[indexUpdateReview] = result.data
-     setReviews(copyReviewArray)
+      
+      setReviews(copyReviewArray);
+      setToggleForm(!toggleForm);
         } catch (error) {
       console.log(error)
       
@@ -76,13 +79,12 @@ async function handlesDelete (id){
   return(
     <section>
     <ReviewForm fromParentReviewsHandleSubmit={handleAdd} />
- {reviews.map(item => {
+ {reviews.map((item) => {
     return(
-       <>
+      
        <ReviewContext.Provider
-       
         value={{
-            fromParentReviewsHandleSubmit : handlesEdit,
+            fromParentReviewsHandleSubmit: handlesEdit,
             review: item,
             handlesDelete: handlesDelete,
             toggleForm: toggleForm,
@@ -92,7 +94,7 @@ async function handlesDelete (id){
         key={item.id}>
            <Review />
         </ReviewContext.Provider>
-        </>
+        
     )
  })}
  </section>

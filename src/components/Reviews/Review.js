@@ -41,7 +41,7 @@ function Review() {
                 <Rating value={review.food_rating} text={`Food rating: ${review.food_rating} stars`} />
                 </div>
                 <div className="mb-3">
-                <Rating value={review?.service_rating} text={`Service rating: ${review.service_rating} stars`} />
+                <Rating value={review.service_rating} text={`Service rating: ${review.service_rating} stars`} />
                 </div>
                 <Card.Title className='text-secondary'>{review.title} </Card.Title>
                 <Card.Text>{review.content}</Card.Text>

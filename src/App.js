@@ -1,6 +1,6 @@
 import {BrowserRouter as Router, Routes, Route}from 'react-router-dom'
 import Nav from './components/Nav/Nav'
-import Home from './components/Home/Home'
+
 import Restaurants from './components/Restaurants/Restaurants'
 import OneRestaurant from './components/Restaurant/OneRestaurant'
 import EditRestaurant from './components/EditRestaurant/EditRestaurant'
@@ -15,7 +15,7 @@ function App() {
      <Router>
       <Nav />
       <Routes>
-      <Route path='/' element={<Home />}/>
+     
       <Route path='/restaurants' element={<Restaurants />}/>
       <Route path='/restaurants/new' element={<CreateRestaurant />}/>
       <Route path='/restaurants/:id' element={<OneRestaurant />}/>

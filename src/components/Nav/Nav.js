@@ -12,9 +12,7 @@ function Nav() {
     <Navbar bg='dark' expand="lg">
      <p> NYC'S Restaurant Guide</p>
      <ul>
-      <li>
-        <NavLink className='nav-link' to='/'>Home</NavLink>
-      </li>
+     
       <li>
         <NavLink  className='nav-link' to='/restaurants'>Restaurants</NavLink>
       </li>

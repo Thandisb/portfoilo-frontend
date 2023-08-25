@@ -81,9 +81,10 @@ function handlesEdit(id){
   
     return (
    <Card border="dark" bg='light' style={{width: '100%'}}> 
-     <Card.Header>{restaurantInfo?.name}</Card.Header>
+     <Card.Header><strong>{restaurantInfo?.name}</strong></Card.Header>
      <Card.Body>
-        <Card.Subtitle className='mb-2 text-muted'>Address:{restaurantInfo?.location} <span>Website:{restaurantInfo?.url}</span></Card.Subtitle>
+        <Card.Subtitle className='mb-2 text-muted'><strong>Address:</strong> {restaurantInfo?.location}</Card.Subtitle>
+        <Card.Subtitle><strong>Website:</strong> {restaurantInfo?.url}</Card.Subtitle>
         <Card.Text>{restaurantInfo?.description}</Card.Text>
         <Card.Text as="div">
           <Link to={`/restaurants/${id}/reviews`}>
@@ -98,9 +99,9 @@ function handlesEdit(id){
         <ListGroup.Item> Health Rating: {restaurantInfo?.health_rating} </ListGroup.Item>
      </ListGroup>
      <Card.Body>
-        <Button onClick={()=>deleteRestaurant(id)} variant='danger'> Delete {restaurantInfo?.name} </Button>
+        <Button onClick={()=>deleteRestaurant(id)} variant='dark'> Delete {restaurantInfo?.name} </Button>
         <Button onClick={handlesBackToRestaurants} variant='dark'> Back To Restaurants </Button>
-        <Button onClick={()=>handlesEdit(id)} variant='danger'> Update info for {restaurantInfo?.name} </Button>
+        <Button onClick={()=>handlesEdit(id)} variant='dark'> Update info for {restaurantInfo?.name} </Button>
      </Card.Body>
    
    <Reviews />
